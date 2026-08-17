@@ -1,0 +1,60 @@
+﻿<Window
+    x:Class="Demo2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:flow="clr-namespace:WpfFlow;assembly=WpfFlow"
+    xmlns:local="clr-namespace:Demo2"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="1200"
+    Height="900"
+    mc:Ignorable="d">
+    <Grid>
+        <flow:FlowChart>
+            <flow:RectShape Fill="LightPink" NodeId="node1" Position="100, 100" Size="100, 100" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.RightPort>
+            </flow:RectShape>
+            <flow:RectShape Fill="LightBlue" NodeId="node2" Position="800, 200" Size="100, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.LeftPort>
+            </flow:RectShape>
+            <flow:RectLinkShape Source="node1" SourcreDirection="Right" SourcreIndex="0" Target="node2" TargetDirection="Left" TargetIndex="0">
+                <flow:RectLinkShape.Labels>
+                    <flow:LinkLabel Percentage="0.1">
+                        <TextBlock Background="White">标签1</TextBlock>
+                    </flow:LinkLabel>
+                    <flow:LinkLabel>标签2</flow:LinkLabel>
+                    <flow:LinkLabel Origin="1,1" Percentage="0.9">标签3</flow:LinkLabel>
+                </flow:RectLinkShape.Labels>
+            </flow:RectLinkShape>
+
+            <flow:RectShape Fill="LightPink" NodeId="node3" Position="100, 400" Size="100, 100" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.RightPort>
+            </flow:RectShape>
+            <flow:RectShape Fill="LightBlue" NodeId="node4" Position="800, 500" Size="100, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.LeftPort>
+            </flow:RectShape>
+            <flow:RectLinkShape Source="node3" SourcreDirection="Right" SourcreIndex="0" Target="node4" TargetDirection="Left" TargetIndex="0">
+                <flow:RectLinkShape.Labels>
+                    <flow:LinkLabel FollowAngle="True">标签</flow:LinkLabel>
+                </flow:RectLinkShape.Labels>
+            </flow:RectLinkShape>
+        </flow:FlowChart>
+    </Grid>
+</Window>

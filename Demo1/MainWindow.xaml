@@ -1,0 +1,67 @@
+﻿<Window
+    x:Class="Demo1.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:flow="clr-namespace:WpfFlow;assembly=WpfFlow"
+    xmlns:local="clr-namespace:Demo1"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="1200"
+    Height="900"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <flow:FlowChart>
+            <flow:RectShape Fill="LightPink" NodeId="node1" Position="100, 100" Size="100, 100" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.RightPort>
+            </flow:RectShape>
+            <flow:RectShape Fill="LightBlue" NodeId="node2" Position="800, 200" Size="100, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.LeftPort>
+            </flow:RectShape>
+            <flow:RectLinkShape Source="node1" SourcreDirection="Right" SourcreIndex="0" Target="node2" TargetDirection="Left" TargetIndex="0" />
+
+            <flow:RectShape Fill="LightCoral" NodeId="node3" Position="100, 300" Size="100, 100" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.RightPort>
+            </flow:RectShape>
+            <flow:RectShape Fill="LightSkyBlue" NodeId="node4" Position="400, 500" Size="100, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.LeftPort>
+            </flow:RectShape>
+
+            <flow:RectLinkShape LineType="Bezier" Source="node3" SourcreDirection="Right" SourcreIndex="0" Target="node4" TargetDirection="Left" TargetIndex="0" />
+
+            <flow:RectShape Fill="LightSalmon" NodeId="node5" Position="600, 300" Size="100, 100" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.RightPort>
+            </flow:RectShape>
+            <flow:RectShape Fill="LightSeaGreen" NodeId="node6" Position="800, 500" Size="100, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port>
+                        <Rectangle Width="20" Height="15" Fill="LightGreen" />
+                    </flow:Port>
+                </flow:RectShape.LeftPort>
+            </flow:RectShape>
+
+            <flow:RectLinkShape LineType="Line" Source="node5" SourcreDirection="Right" SourcreIndex="0" Target="node6" TargetDirection="Left" TargetIndex="0" />
+        </flow:FlowChart>
+    </Grid>
+</Window>

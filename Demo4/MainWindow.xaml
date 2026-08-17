@@ -1,0 +1,446 @@
+﻿<Window
+    x:Class="Demo4.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:flow="clr-namespace:WpfFlow;assembly=WpfFlow"
+    xmlns:local="clr-namespace:Demo4"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="1500"
+    Height="900"
+    Loaded="Window_Loaded"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <flow:FlowChart Name="FlowChart" Background="#f3f7f6" GridStyle="{x:Null}">
+            <flow:RectLinkShape
+                Source="node1"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node2"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+            <flow:RectLinkShape
+                Source="node1"
+                SourcreDirection="Right"
+                SourcreIndex="1"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node3"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node2"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node4"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+            <flow:RectLinkShape
+                Source="node3"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node5"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node4"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node6"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+            <flow:RectLinkShape
+                Source="node5"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node7"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node6"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node8"
+                TargetDirection="Top"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+            <flow:RectLinkShape
+                Source="node7"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node8"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node8"
+                SourcreDirection="Bottom"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node9"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+            <flow:RectLinkShape
+                Source="node10"
+                SourcreDirection="Bottom"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node9"
+                TargetDirection="Top"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node11"
+                SourcreDirection="Bottom"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node10"
+                TargetDirection="Top"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node1"
+                SourcreDirection="Left"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node12"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectLinkShape
+                Source="node9"
+                SourcreDirection="Right"
+                SourcreIndex="0"
+                Stroke="{StaticResource --liquid-color}"
+                Stroke2="White"
+                Stroke3="{StaticResource --liquid-color2}"
+                StrokeThickness="10"
+                StrokeThickness2="10"
+                StrokeThickness3="18"
+                Target="node13"
+                TargetDirection="Left"
+                TargetIndex="0">
+                <flow:RectLinkShape.StrokeDashStyle>
+                    <DashStyle Dashes="0.5 2" />
+                </flow:RectLinkShape.StrokeDashStyle>
+            </flow:RectLinkShape>
+
+            <flow:RectShape NodeId="node1" Position="100, 300" RightPortPanel="StackPanel" Size="220, 300" Stroke="LightSkyBlue">
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,80,0,0" />
+                    <flow:Port Margin="0,120,0,0" />
+                </flow:RectShape.RightPort>
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,180,0,0" />
+                </flow:RectShape.LeftPort>
+                <Grid>
+                    <Image Source="{StaticResource TankDrawingImage}" />
+                    <Border Width="100" Height="230" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Gray" BorderThickness="1" CornerRadius="3">
+                        <StackPanel Orientation="Horizontal">
+                            <ProgressBar Name="TankProcess" Width="35" Height="205" Maximum="100" Minimum="0" Orientation="Vertical" Value="60" />
+                            <UniformGrid Margin="2,0,0,0" Columns="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="100" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="90" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="80" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="70" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="60" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="50" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="40" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="30" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="20" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="10" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Line VerticalAlignment="Center" Stroke="Black" StrokeThickness="2" X1="0" X2="10" Y1="0" Y2="0" />
+                                    <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Text="0" />
+                                </StackPanel>
+                            </UniformGrid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </flow:RectShape>
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node2" Position="430, 260" Radius="20" RightPortPanel="StackPanel" Size="87, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.RightPort>
+                <Image Source="{StaticResource IndustrialIndicatorImage}" />
+            </flow:RectShape>
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node3" Position="430, 450" Radius="20" RightPortPanel="StackPanel" Size="87, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.RightPort>
+                <Image Source="{StaticResource IndustrialIndicatorImage}" />
+            </flow:RectShape>
+
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node4" Position="630, 267" Radius="20" RightPortPanel="StackPanel" Size="160, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,78,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,33,0,0" />
+                </flow:RectShape.RightPort>
+                <Grid>
+                    <Image Source="{StaticResource IndustrialPumpOutlineImage}" />
+                    <Image Margin="-12,0,0,0" RenderTransformOrigin="0.5, 0.5" Source="{StaticResource FanImage}">
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="Fan1Rotate" />
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </flow:RectShape>
+
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node5" Position="630, 457" Radius="20" RightPortPanel="StackPanel" Size="160, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,78,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,33,0,0" />
+                </flow:RectShape.RightPort>
+                <Grid>
+                    <Image Source="{StaticResource IndustrialPumpOutlineImage}" />
+                    <Image Margin="-12,0,0,0" RenderTransformOrigin="0.5, 0.5" Source="{StaticResource FanImage}">
+                        <Image.RenderTransform>
+                            <RotateTransform x:Name="Fan1Rotate2" />
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </flow:RectShape>
+
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node6" Position="880, 215" Radius="20" RightPortPanel="StackPanel" Size="87, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.RightPort>
+                <Image Source="{StaticResource IndustrialIndicatorImage}" />
+            </flow:RectShape>
+            <flow:RectShape LeftPortPanel="StackPanel" NodeId="node7" Position="880, 405" Radius="20" RightPortPanel="StackPanel" Size="87, 100">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port Margin="0,85,0,0" />
+                </flow:RectShape.RightPort>
+                <Image Source="{StaticResource IndustrialIndicatorImage}" />
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node8" Position="1050, 465" Radius="20" Size="50, 50">
+                <flow:RectShape.LeftPort>
+                    <flow:Port />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.TopPort>
+                    <flow:Port />
+                </flow:RectShape.TopPort>
+                <flow:RectShape.BottomPort>
+                    <flow:Port />
+                </flow:RectShape.BottomPort>
+                <Image Source="{StaticResource DivertImage}" />
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node9" Position="1150, 600" Radius="20" Size="50, 50">
+                <flow:RectShape.LeftPort>
+                    <flow:Port />
+                </flow:RectShape.LeftPort>
+                <flow:RectShape.TopPort>
+                    <flow:Port />
+                </flow:RectShape.TopPort>
+                <flow:RectShape.RightPort>
+                    <flow:Port />
+                </flow:RectShape.RightPort>
+                <Image Source="{StaticResource DivertImage}" />
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node10" Position="1150, 400" Radius="20" Size="100, 87">
+                <flow:RectShape.TopPort>
+                    <flow:Port Margin="70,0,0,0" />
+                </flow:RectShape.TopPort>
+                <flow:RectShape.BottomPort>
+                    <flow:Port Margin="70,0,0,0" />
+                </flow:RectShape.BottomPort>
+                <Image Source="{StaticResource IndustrialIndicatorImage2}" />
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node11" Position="1135, 120" Radius="20" Size="200, 200">
+                <flow:RectShape.BottomPort>
+                    <flow:Port />
+                </flow:RectShape.BottomPort>
+                <Image Source="{StaticResource Tank2}" />
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node12" Position="80, 650" Radius="20" Size="170, 60">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,0,-10,0" />
+                </flow:RectShape.LeftPort>
+                <Grid>
+                    <Image Source="{StaticResource ZoneImage}" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="#0EAD69" Text="Zone 1" />
+                </Grid>
+            </flow:RectShape>
+
+            <flow:RectShape NodeId="node13" Position="1280, 595" Radius="20" Size="170, 60">
+                <flow:RectShape.LeftPort>
+                    <flow:Port Margin="0,0,-10,0" />
+                </flow:RectShape.LeftPort>
+                <Grid>
+                    <Image Source="{StaticResource ZoneImage}" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="#0EAD69" Text="Zone 2" />
+                </Grid>
+            </flow:RectShape>
+
+        </flow:FlowChart>
+    </Grid>
+</Window>

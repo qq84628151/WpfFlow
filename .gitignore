@@ -1,0 +1,14 @@
+/Demo1/bin
+/Demo1/obj
+/WpfFlow/bin
+/WpfFlow/obj
+.vs
+/WpfFlow/*.nuspec
+/WpfFlow/nuget_submit.txt
+/Demo2/bin
+/Demo2/obj
+/*/bin
+/*/obj
+*.nupkg
+/*.nupkg
+/WpfFlow/Nuget_README.md
