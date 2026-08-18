@@ -101,12 +101,12 @@ namespace Demo5
             {
                 if (item is RectLinkShape link)
                 {
-                    if (link.Target == flowRect1.NodeId)
+                    if (link.Source == flowRect1.NodeId || link.Target == flowRect1.NodeId)
                     {
                         UpdateColor(test_ellipse);
                     }
 
-                    if (link.Target == flowRect2.NodeId)
+                    if (link.Source == flowRect2.NodeId || link.Target == flowRect2.NodeId)
                     {
                         UpdateColor(test_rectangle);
                     }
