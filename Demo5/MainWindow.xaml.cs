@@ -74,7 +74,7 @@ namespace Demo5
             {
                 if (item is RectLinkShape link)
                 {
-                    if (link != e.Link && link.Source == e.Link.Source && link.Target == e.Link.Target)
+                    if (link != e.Link && ((link.Source == e.Link.Source && link.Target == e.Link.Target) || (link.Source == e.Link.Target && link.Target == e.Link.Source)))
                     {
                         FlowChart.ItemsSource.Remove(e.Link);
                         break;
