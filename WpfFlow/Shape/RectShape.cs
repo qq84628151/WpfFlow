@@ -108,7 +108,7 @@ namespace WpfFlow
         public PanelType LeftPortPanel
         {
             get => this._leftPortPanel;
-            set { this._leftPortPanel = value; UpdateMatri(); CreatePortLayout(true); NotifyPropertyChanged(); }
+            set { this._leftPortPanel = value; CreatePortLayout(true); NotifyPropertyChanged(); }
         }
 
         private PanelType _topPortPanel;
@@ -118,7 +118,7 @@ namespace WpfFlow
         public PanelType TopPortPanel
         {
             get => this._topPortPanel;
-            set { this._topPortPanel = value; UpdateMatri(); CreatePortLayout(true); NotifyPropertyChanged(); }
+            set { this._topPortPanel = value; CreatePortLayout(true); NotifyPropertyChanged(); }
         }
 
         private PanelType _rightPortPanel;
@@ -128,7 +128,7 @@ namespace WpfFlow
         public PanelType RightPortPanel
         {
             get => this._rightPortPanel;
-            set { this._rightPortPanel = value; UpdateMatri(); CreatePortLayout(true); NotifyPropertyChanged(); }
+            set { this._rightPortPanel = value; CreatePortLayout(true); NotifyPropertyChanged(); }
         }
 
         private PanelType _bottomPortPanel;
@@ -138,7 +138,7 @@ namespace WpfFlow
         public PanelType BottomPortPanel
         {
             get => this._bottomPortPanel;
-            set { this._bottomPortPanel = value; UpdateMatri(); CreatePortLayout(true); NotifyPropertyChanged(); }
+            set { this._bottomPortPanel = value; CreatePortLayout(true); NotifyPropertyChanged(); }
         }
 
         /// <summary>
