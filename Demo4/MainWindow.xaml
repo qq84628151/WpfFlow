@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
-        <flow:FlowChart Name="FlowChart" Background="#f3f7f6" GridStyle="{x:Null}">
+        <flow:FlowChart Name="FlowChart" Background="{StaticResource BackColor}" GridStyle="{x:Null}">
             <flow:RectLinkShape
                 Source="node1"
                 SourcreDirection="Right"
@@ -427,7 +427,7 @@
                 </flow:RectShape.LeftPort>
                 <Grid>
                     <Image Source="{StaticResource ZoneImage}" />
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="#0EAD69" Text="Zone 1" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="{StaticResource TextColor}" Text="Zone 1" />
                 </Grid>
             </flow:RectShape>
 
@@ -437,7 +437,7 @@
                 </flow:RectShape.LeftPort>
                 <Grid>
                     <Image Source="{StaticResource ZoneImage}" />
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="#0EAD69" Text="Zone 2" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="{StaticResource TextColor}" Text="Zone 2" />
                 </Grid>
             </flow:RectShape>
 

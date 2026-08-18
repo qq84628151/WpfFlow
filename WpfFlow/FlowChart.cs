@@ -620,6 +620,7 @@ namespace WpfFlow
                 _renderContents.Children.Remove(linkBase.VisualHost);
                 linkBase.PropertyChanged -= OnShapeBaseDataItemPropertyChanged;
                 LinkMatchSourceAngTarget(linkBase);
+                foreach (var label in linkBase.Labels) RemoveLinkLabel(label);
                 linkBase.Labels.CollectionChanged -= Labels_CollectionChanged;
             }
         }
@@ -1014,6 +1015,7 @@ namespace WpfFlow
                     _newLink.StrokeDashStyle3 = DefaultNewLine.StrokeDashStyle3;
                     _newLink.ArcRadius = DefaultNewLine.ArcRadius;
                     _newLink.Effect = DefaultNewLine.Effect;
+                    _newLink.LineType = DefaultNewLine.LineType;
                 }
 
                 ItemsSource.Add(_newLink);
@@ -1381,7 +1383,24 @@ namespace WpfFlow
                 {
                     ItemsSource.Remove(_newLink);
                 }
-                DragAddNewLink?.Invoke(_newLink, new NewLineEventArgs(_newLink));
+                else
+                {
+                    Port sourcePort = null;
+                    Port targetPort = null;
+
+                    if (_newLink.SourceRect is RectShape srcRect)
+                    {
+                        sourcePort = srcRect.Ports[(int)_newLink.SourcreDirection - 1][_newLink.SourcreIndex];
+                    }
+
+                    if (_newLink.TargetRect is RectShape tarRect)
+                    {
+                        targetPort = tarRect.Ports[(int)_newLink.TargetDirection - 1][_newLink.TargetIndex];
+                    }
+
+                    DragAddNewLink?.Invoke(_newLink, new NewLineEventArgs(_newLink, _newLink.SourceRect, _newLink.TargetRect, sourcePort, targetPort));
+                }
+
                 _newLink = null;
                 _newLinkPort = null;
                 Mouse.Capture(null);

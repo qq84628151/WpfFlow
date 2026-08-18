@@ -37,12 +37,12 @@ namespace WpfFlow
             set { this._fill = value; ContentPanel.Background = _fill; NotifyPropertyChanged(); }
         }
 
-        private double _radius = 5;
+        private CornerRadius _radius = new CornerRadius(5);
         /// <summary>
         /// 圆角半径
         /// </summary>
-        [DefaultValue(5.0)]
-        public double Radius
+        [DefaultValue(typeof(CornerRadius), "5")]
+        public CornerRadius Radius
         {
             get => this._radius;
             set { this._radius = value; NotifyPropertyChanged(); }

@@ -13,9 +13,18 @@ namespace WpfFlow.FlowEventArgs
     public class NewLineEventArgs : EventArgs
     {
         public LinkBase Link { get; set; }
-        public NewLineEventArgs(LinkBase link)
+        public ShapeBase Source { get;set; }
+        public ShapeBase Target { get; set; }
+        public Port SourcePort { get; set;}
+        public Port TargetPort { get; set; }
+
+        public NewLineEventArgs(LinkBase link, ShapeBase source, ShapeBase target, Port sourcePort, Port targetPort)
         {
             Link = link;
+            Source = source;
+            Target = target;
+            SourcePort = sourcePort;
+            TargetPort = targetPort;
         }
     }
 }
