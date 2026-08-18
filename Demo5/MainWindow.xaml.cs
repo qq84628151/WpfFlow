@@ -60,12 +60,12 @@ namespace Demo5
 
         private void FlowChart_DragAddNewLink(object sender, NewLineEventArgs e)
         {
-            if (e.Target == flowRect1)
+            if (e.Source == flowRect1 || e.Target == flowRect1)
             {
                 UpdateColor(test_ellipse);
             }
 
-            if (e.Target == flowRect2)
+            if (e.Source == flowRect2 || e.Target == flowRect2)
             {
                 UpdateColor(test_rectangle);
             }
