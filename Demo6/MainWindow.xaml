@@ -38,11 +38,15 @@
         </Border>
 
         <Border Grid.Column="1" Padding="20" Background="#eaecee" BorderBrush="#dfe2e5" BorderThickness="1">
-            <flow:FlowChart Name="FlowChart" AllowDrop="True" Drop="FlowChart_Drop">
+            <flow:FlowChart Name="FlowChart" AllowDrop="True" DragEnter="FlowChart_DragEnter" DragLeave="FlowChart_DragLeave" DragOver="FlowChart_DragOver" Drop="FlowChart_Drop">
                 <flow:FlowChart.Effect>
                     <DropShadowEffect BlurRadius="20" Opacity="0.3" ShadowDepth="0" />
                 </flow:FlowChart.Effect>
             </flow:FlowChart>
         </Border>
+
+        <Canvas x:Name="DragCanvas" Grid.ColumnSpan="2">
+            <Image x:Name="dragImg" IsHitTestVisible="False" />
+        </Canvas>
     </Grid>
 </Window>

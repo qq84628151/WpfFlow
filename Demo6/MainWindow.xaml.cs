@@ -23,6 +23,7 @@ namespace Demo6
     public partial class MainWindow : Window
     {
         private int index = 0;
+        private ImageSource srcImg = null;
 
         public MainWindow()
         {
@@ -42,6 +43,7 @@ namespace Demo6
             {
                 data = new ItemData(img.Source, 50, 50);
             }
+            srcImg = img.Source;
             DragDrop.DoDragDrop(panel, new DataObject("ItemData", data), DragDropEffects.Copy);
         }
 
@@ -52,7 +54,6 @@ namespace Demo6
                 ItemData itemData = e.Data.GetData("ItemData") as ItemData;
                 DrawingImage drawingImage = itemData.Source as DrawingImage;
                 Point dropPoint = e.GetPosition(FlowChart);
-
 
                 var path = new Path();
                 path.Stretch = Stretch.Fill;
@@ -81,20 +82,52 @@ namespace Demo6
 
                 FlowChart.ItemsSource.Add(rectShape);
             }
+
+            if (srcImg != null)
+            {
+                srcImg = null;
+                dragImg.Source = null;
+            }
         }
 
-        public class ItemData
+        private void FlowChart_DragEnter(object sender, DragEventArgs e)
         {
-            public ImageSource Source { get; set; }
-            public double Width { get; set; }
-            public double Height { get; set; }
-
-            public ItemData(ImageSource source, double width, double height)
+            if (srcImg != null)
             {
-                Source = source;
-                Width = width;
-                Height = height;
+                dragImg.Source = srcImg;
             }
+        }
+
+        private void FlowChart_DragLeave(object sender, DragEventArgs e)
+        {
+            if (dragImg.Source != null)
+            {
+                dragImg.Source = null;
+            }
+        }
+
+        private void FlowChart_DragOver(object sender, DragEventArgs e)
+        {
+            if(srcImg != null)
+            {
+                var point = e.GetPosition(this);
+                Canvas.SetLeft(dragImg, point.X);
+                Canvas.SetTop(dragImg, point.Y);
+            }
+        }
+    }
+
+    public class ItemData
+    {
+        public ImageSource Source { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
+
+        public ItemData(ImageSource source, double width, double height)
+        {
+            Source = source;
+            Width = width;
+            Height = height;
         }
     }
 }
