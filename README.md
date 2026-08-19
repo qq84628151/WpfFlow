@@ -1,7 +1,3 @@
-QQ：1018720141    QQ群：1064754010
-
-Nuget: WpfFlow
-
 Demo1:<br>
 <img src="https://foruda.gitee.com/images/1786977825981845018/3be12a5c_2189974.png" width="600" /><br>
 Demo2:<br>
@@ -14,3 +10,6 @@ Demo4:<br>
 Demo5:<br>
 <img src="https://foruda.gitee.com/images/1787055466515505061/1b95afcc_2189974.png" width="600" /><br>
 <img src="https://foruda.gitee.com/images/1787056534970603682/7872a0b5_2189974.gif" width="600" /><br>
+Demo6:<br>
+<img src="https://foruda.gitee.com/images/1787139633040784136/9cdf7ec2_2189974.png" width="600" /><br>
+<img src="https://foruda.gitee.com/images/1787139589323628668/d546a4a1_2189974.gif" width="600" /><br>
