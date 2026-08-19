@@ -44,7 +44,5 @@
                 </flow:FlowChart.Effect>
             </flow:FlowChart>
         </Border>
-
-        <Canvas x:Name="DragCanvas" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
