@@ -48,6 +48,7 @@
     <Compile Include="Enum\NodeLinkType.cs" />
     <Compile Include="Enum\PanelType.cs" />
     <Compile Include="Enum\PortDirection.cs" />
+    <Compile Include="Enum\PortJoinAlign.cs" />
     <Compile Include="Enum\PortType.cs" />
     <Compile Include="Enum\RectLinkType.cs" />
     <Compile Include="FlowChart.cs" />

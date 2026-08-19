@@ -110,24 +110,33 @@ namespace WpfFlow
             var realBound = port.TransformToAncestor(rect.Panel).TransformBounds(bound);
             var center = realBound.Location;
 
-            if (port.Dir == PortDirection.Right)
+            if (port.JoinAlignType == PortJoinAlign.Default)
             {
-                center.X = realBound.X + realBound.Width;
+                if (port.Dir == PortDirection.Right)
+                {
+                    center.X = realBound.X + realBound.Width;
+                }
+
+                if (port.Dir == PortDirection.Left || port.Dir == PortDirection.Right)
+                {
+                    center.Y = realBound.Y + realBound.Height / 2;
+                }
+
+                if (port.Dir == PortDirection.Bottom)
+                {
+                    center.Y = realBound.Y + realBound.Height;
+                }
+
+                if (port.Dir == PortDirection.Top || port.Dir == PortDirection.Bottom)
+                {
+                    center.X = realBound.X + realBound.Width / 2;
+                }
             }
 
-            if (port.Dir == PortDirection.Left || port.Dir == PortDirection.Right)
-            {
-                center.Y = realBound.Y + realBound.Height / 2;
-            }
 
-            if (port.Dir == PortDirection.Bottom)
+            if (port.JoinAlignType == PortJoinAlign.Center)
             {
-                center.Y = realBound.Y + realBound.Height;
-            }
-
-            if (port.Dir == PortDirection.Top || port.Dir == PortDirection.Bottom)
-            {
-                center.X = realBound.X + realBound.Width / 2;
+                center = new Point(realBound.X + realBound.Width / 2, realBound.Y + realBound.Height / 2);
             }
 
             center = rect.Panel.RenderTransform.Transform(center);

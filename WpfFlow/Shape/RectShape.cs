@@ -141,6 +141,26 @@ namespace WpfFlow
             set { this._bottomPortPanel = value; CreatePortLayout(true); NotifyPropertyChanged(); }
         }
 
+        private HorizontalAlignment _horizontalAlignment = HorizontalAlignment.Center;
+        /// <summary>
+        /// 底部端口容器
+        /// </summary>
+        public HorizontalAlignment HorizontalAlignment
+        {
+            get => this._horizontalAlignment;
+            set { this._horizontalAlignment = value; CreatePortLayout(true); NotifyPropertyChanged(); }
+        }
+
+        private VerticalAlignment _verticalAlignment = VerticalAlignment.Center;
+        /// <summary>
+        /// 底部端口容器
+        /// </summary>
+        public VerticalAlignment VerticalAlignment
+        {
+            get => this._verticalAlignment;
+            set { this._verticalAlignment = value; CreatePortLayout(true); NotifyPropertyChanged(); }
+        }
+
         /// <summary>
         /// 左边端口数据源
         /// </summary>
@@ -179,8 +199,8 @@ namespace WpfFlow
             BindingOperations.SetBinding(ContentPanel, Border.BorderThicknessProperty, CommonHelper.CreateBinding(nameof(StrokeThickness), this));
 
             var content = new ContentControl();
-            content.HorizontalAlignment = HorizontalAlignment.Center;
-            content.VerticalAlignment = VerticalAlignment.Center;
+            content.SetBinding(ContentControl.HorizontalAlignmentProperty, CommonHelper.CreateBinding(nameof(HorizontalAlignment), this));
+            content.SetBinding(ContentControl.VerticalAlignmentProperty, CommonHelper.CreateBinding(nameof(VerticalAlignment), this));
             content.SetBinding(ContentControl.ContentProperty, CommonHelper.CreateBinding(nameof(Content), this));
             ContentPanel.Child = content;
             ContentPanel.RenderTransform = new TranslateTransform();

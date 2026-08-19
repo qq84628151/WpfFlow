@@ -344,6 +344,7 @@ namespace WpfFlow
 
         public FlowChart()
         {
+            ClipToBounds = true;
             SetValue(ItemsSourcePropertyKey, new ObservableCollectionExt<IShape>());
 
             _previewColor.Freeze();

@@ -55,6 +55,17 @@ namespace WpfFlow
             }
         }
 
+        private PortJoinAlign _joinAlignType;
+        /// <summary>
+        /// 连线点对齐方式
+        /// </summary>
+        public PortJoinAlign JoinAlignType
+        {
+            get => this._joinAlignType;
+            set { this._joinAlignType = value; NotifyPropertyChanged(); }
+        }
+
+
         internal PortDirection Dir { get; set; }
         internal ShapeBase Shape { get; set; }
 
