@@ -31,8 +31,7 @@ namespace Demo8
 
         private readonly List<RectShape> leftPortList = new List<RectShape>();
         private readonly List<RectShape> rightPortList = new List<RectShape>();
-        private List<Point> leftPortOffsetList = null;
-        private List<Point> rightPortOffsetList = null;
+        private Dictionary<RectShape, Point> offsetDict = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -124,17 +123,22 @@ namespace Demo8
         {
             if (!dragFlag)
             {
-                leftPortOffsetList = new List<Point>(leftPortList.Count);
-                rightPortOffsetList = new List<Point>(rightPortList.Count);
+                offsetDict = new Dictionary<RectShape, Point>();
                 for (int i = 0; i < leftPortList.Count; ++i)
                 {
-                    leftPortOffsetList.Add(e.Position - leftPortList[i].Position);
+                    if (sender == leftPortList[i]) continue;
+
+                    offsetDict.Add(leftPortList[i], e.Position - leftPortList[i].Position);
                 }
 
                 for (int i = 0; i < rightPortList.Count; ++i)
                 {
-                    rightPortOffsetList.Add(e.Position - rightPortList[i].Position);
+                    if (sender == rightPortList[i]) continue;
+
+                    offsetDict.Add(rightPortList[i], e.Position - rightPortList[i].Position);
                 }
+
+                if (sender != StartRect) offsetDict.Add(StartRect, e.Position - StartRect.Position);
                 dragFlag = true;
             }
         }
@@ -151,14 +155,9 @@ namespace Demo8
         {
             if (dragFlag)
             {
-                for (int i = 0; i < leftPortOffsetList.Count; ++i)
+                foreach(var kv in offsetDict)
                 {
-                    leftPortList[i].Position = e.Position - leftPortOffsetList[i];
-                }
-
-                for (int i = 0; i < rightPortOffsetList.Count; ++i)
-                {
-                    rightPortList[i].Position = e.Position - rightPortOffsetList[i];
+                    kv.Key.Position = e.Position - kv.Value;
                 }
             }
         }
