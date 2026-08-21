@@ -1315,7 +1315,7 @@ namespace WpfFlow
                     Matrix currentMat = Matrix.Identity;
                     currentMat.RotateAt(angle, oldWidth / 2, oldHeight / 2);
                     currentMat.Translate(_nodeResizeShape.Position.X, _nodeResizeShape.Position.Y);
-                    Point globalMousePoint = TransformToVisual(_renderContents).Transform(e.GetPosition(this));
+                    Point globalMousePoint = TransformToVisual(_renderContents).Transform(mouseMovePoint);
 
                     double localFixedX = (_dragHandle == _resizeTopLeft || _dragHandle == _resizeBottomLeft) ? (oldWidth + RESIZE_MARGIN) : -RESIZE_MARGIN;
                     double localFixedY = (_dragHandle == _resizeTopLeft || _dragHandle == _resizeTopRight) ? (oldHeight + RESIZE_MARGIN) : -RESIZE_MARGIN;
