@@ -55,11 +55,12 @@ namespace WpfFlow
             set { this._stroke = value; this._stroke?.Freeze();NotifyPropertyChanged(); }
         }
 
-        private double _strokeThickness;
+        private Thickness _strokeThickness = new Thickness(1);
         /// <summary>
         /// 节点线粗细
         /// </summary>
-        public double StrokeThickness
+        [DefaultValue(typeof(Thickness), "1")]
+        public Thickness StrokeThickness
         {
             get => this._strokeThickness;
             set { this._strokeThickness = value;  NotifyPropertyChanged(); }
