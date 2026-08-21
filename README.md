@@ -13,3 +13,8 @@ Demo5:<br>
 Demo6:<br>
 <img src="https://foruda.gitee.com/images/1787139633040784136/9cdf7ec2_2189974.png" width="600" /><br>
 <img src="https://foruda.gitee.com/images/1787142614137987505/cb89d9e8_2189974.gif" width="600" /><br>
+Demo7:<br>
+<img src="https://foruda.gitee.com/images/1787312308885528392/84f8b7ce_2189974.png" width="600" /><br>
+Demo8:<br>
+<img src="https://foruda.gitee.com/images/1787312333712584885/b47c496a_2189974.png" width="600" /><br>
+<img src="https://foruda.gitee.com/images/1787312359250771542/715959a7_2189974.gif" width="600" /><br>
