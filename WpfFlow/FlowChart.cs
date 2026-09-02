@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
-using System.Runtime.Remoting.Lifetime;
 using System.Security.Cryptography;
 using System.Windows;
 using System.Windows.Controls;
@@ -648,6 +647,7 @@ namespace WpfFlow
             if (shape is ShapeBase shapeBase)
             {
                 _renderContents.Children.Add(shapeBase.Panel);
+                shapeBase.Panel.Cursor = DisableDragMove ? Cursors.Arrow : Cursors.SizeAll;
                 shapeBase.Panel.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
                 shapeBase.Panel.Arrange(new Rect(new Point(), shapeBase.Panel.DesiredSize));
                 shapeBase.Panel.UpdateLayout();
@@ -974,6 +974,7 @@ namespace WpfFlow
                         port.VerticalAlignment = VerticalAlignment.Top;
                         break;
                 }
+                port.Cursor = DisableDragAddLine ? Cursors.Arrow : Cursors.Cross;
                 port.Dir = shapeColl.Dir;
                 port.Shape = rect;
                 port.MouseLeftButtonDown += Port_MouseDown;
@@ -993,7 +994,7 @@ namespace WpfFlow
         private void Port_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var port = (Port)sender;
-            if (_newLink == null && !port.DisbaleDragJoin)
+            if (_newLink == null && !port.DisbaleDragJoin && !DisableDragAddLine)
             {
                 Mouse.Capture(sender as UIElement);
                 _newLinkPort = port;
